@@ -8,6 +8,7 @@ env:
   MONGODB_DB_NAME: gha-demo
   
 jobs:
+  environment: testing
   test:
     env: 
       MONGODB_CLUSTER_ADDRESS: githubactions.xdggzcf.mongodb.net
@@ -38,4 +39,5 @@ jobs:
     steps:
       - name: Output information
         run: |        
+          echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
           echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
